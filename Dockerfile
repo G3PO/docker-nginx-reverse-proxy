@@ -4,6 +4,9 @@ FROM debian:jessie
 RUN apt-get update
 RUN apt-get install nginx -y
 
+# Installation de dnsmasq
+RUN apt-get install dnsmasq -y
+
 # Création du dossier contenant les certificats
 RUN mkdir /etc/nginx/certificates
 
