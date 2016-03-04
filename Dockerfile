@@ -15,8 +15,8 @@ VOLUME /etc/nginx/sites-enabled
 VOLUME /etc/nginx/certificates
 
 # Copie des fichiers de configuration
-COPY nginx.conf /etc/nginx/
-COPY proxy.conf /etc/nginx/conf.d/
+COPY confs/nginx.conf /etc/nginx/
+COPY confs/proxy.conf /etc/nginx/conf.d/
 
 # Exposition du port
 EXPOSE 80 443
