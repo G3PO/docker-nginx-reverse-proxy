@@ -25,12 +25,15 @@ And if you want to use a reverse-proxy on HTTP and/or HTTPS websites :
 
 ###Volumes
 
-#### Server files
-
-The server files and configuration are placed in the volume `/etc/openvpn`. To persist server files and configuration, add this argument to the launch command : `-v /path/in/host:/etc/openvpn`
-If the server directory is empty, a new server will be created. Otherwise, the old one will be used.
+* **/etc/nginx/sites-enabled**: Should contains nginx configurations for redirections to websites/web apps.
+* **/etc/nginx/certificates**: Should contains certificates used in nginx redirection configurations.
 
 ### Ports
 
 * **80**: HTTP port.
 * **443**: HTTPS port.
+
+### Links
+
+Add links to other container with `--link source-container-name:alias-container-name` as an argument.
+Then, you'll have to add `http://alias-container-name` into your nginx website/webapp configuration to redirect flux.
